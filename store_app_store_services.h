@@ -39,8 +39,10 @@ public:
   /// Fires `SKPaymentQueue.restoreCompletedTransactions` - StoreKit's only
   /// way to learn which non-consumable products a signed-in Apple ID
   /// already owns, refreshing owned_dlc_ids() as each restored transaction
-  /// arrives.
-  void refresh_ownership();
+  /// arrives. @p dlc_id is ignored, same as
+  /// store::StoreCore::refresh_ownership() documents for any bulk-capable
+  /// backend.
+  void refresh_ownership(nx::string_view dlc_id = {}) override;
 
   static void dispatch_transaction_restored(nx::string_view product_id);
   static void dispatch_restore_finished(bool success);
@@ -79,7 +81,7 @@ public:
   /// other three mobile backends, StoreKit has no "list everything" query,
   /// the game must know its own product ids up front. Also populates the
   /// `SKProduct` cache purchase() reads from.
-  void refresh_products(const nx::vector<nx::string> &product_ids);
+  void refresh_products(const nx::vector<nx::string> &product_ids) override;
 
   static void dispatch_product_details_response(
       const nx::vector<store::StoreProduct> &products);

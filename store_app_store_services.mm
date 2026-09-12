@@ -84,7 +84,7 @@ bool AppStoreCore::is_owned(const nx::string_view dlc_id) const {
   return false;
 }
 
-void AppStoreCore::refresh_ownership() {
+void AppStoreCore::refresh_ownership(const nx::string_view) {
   if (!m_platform.ready())
     return;
   m_owned_dlc_ids.clear();
