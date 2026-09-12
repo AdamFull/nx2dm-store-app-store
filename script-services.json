@@ -1,0 +1,36 @@
+{
+  "services": [
+    {
+      "name": "store_app_store_leaderboard_submit_score",
+      "signature": "(string,number)->(boolean)"
+    },
+    {
+      "name": "store_app_store_leaderboard_submit_pending",
+      "signature": "()->(boolean)"
+    },
+    {
+      "name": "store_app_store_leaderboard_download",
+      "signature": "(string)->(boolean)"
+    },
+    {
+      "name": "store_app_store_leaderboard_download_pending",
+      "signature": "()->(boolean)"
+    },
+    {
+      "name": "store_app_store_leaderboard_entry_count",
+      "signature": "()->(number)"
+    },
+    {
+      "name": "store_app_store_leaderboard_entry_rank",
+      "signature": "(number)->(number)"
+    },
+    {
+      "name": "store_app_store_leaderboard_entry_score",
+      "signature": "(number)->(number)"
+    },
+    {
+      "name": "store_app_store_leaderboard_entry_name",
+      "signature": "(number)->(string)"
+    }
+  ]
+}

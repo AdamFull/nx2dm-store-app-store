@@ -27,11 +27,18 @@ endif ()
 # other-language boundary.
 set_source_files_properties(
         store_app_store_platform.mm store_app_store_services.mm
+        store_app_store_gamecenter_platform.mm store_app_store_gamecenter_services.mm
+        store_app_store_gamecenter_leaderboards.mm
         PROPERTIES COMPILE_OPTIONS "-fobjc-arc")
 
 nx_module(store_app_store
         DISPLAY "Apple App Store (StoreKit) storefront backend"
         SOURCES store_app_store_module.cpp store_app_store_platform.mm
                 store_app_store_services.mm
+                store_app_store_gamecenter_platform.mm
+                store_app_store_gamecenter_services.mm
+                store_app_store_gamecenter_leaderboards.mm
+                store_app_store_scripting.cpp
         DEPENDS nx_module_store "-framework StoreKit" "-framework Foundation"
+                "-framework GameKit"
         PLATFORMS ios)
