@@ -2,7 +2,7 @@
 
 #include "store_app_store/store_app_store_gamecenter_leaderboards.h"
 
-#include "core/script/script_host.h"
+#include "script/script_host.h"
 
 namespace nxm::store_app_store {
 
