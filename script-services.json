@@ -1,4 +1,7 @@
 {
+  "platforms": [
+    "ios"
+  ],
   "services": [
     {
       "name": "store_app_store_leaderboard_submit_score",
